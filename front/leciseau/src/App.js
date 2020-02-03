@@ -6,7 +6,7 @@ import './App.css';
 ///Components///
 import Match from "./components/Match"
 import Ranking from  "./components/Ranking"
-import Homepage from "./component/Homepage"
+import Homepage from "./components/Homepage"
 
 function App() {
   return (
