@@ -20,14 +20,8 @@ app.get('/', (req, res) => {
     res.send("Welcome on your Node/Express server !").status(200)
 })
 
-//Routes for User 
-app.use("/user", route.user)
+app.use("/haircut",route.haircut)
 
-//Route for Combat
-app.use("/combat", route.combat)
-
-//Route for Gladiator
-app.use("/gladiator", route.gladiator)
 
 app.listen(port, err => {
     if (err){ throw new Error('👎 👎  -- Something bad happened... server not connected -- 👎 👎 ')}
