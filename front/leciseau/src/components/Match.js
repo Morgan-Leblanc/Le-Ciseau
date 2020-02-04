@@ -98,7 +98,7 @@ class Match extends React.Component {
           </div>
         </div>
         <input
-          className=" btn btn-dark px-5 py-4"
+          className=" btn btn-dark px-5 py-4 inputmatch"
           type="button"
           value="See The best Haircut !"
           onClick={() => this.handleNav()}
