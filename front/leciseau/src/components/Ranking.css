@@ -1,0 +1,18 @@
+@font-face{font-family: "Gloria" ;
+    src:url("../components/assets/fonts/Gloria.ttf")};
+    
+    
+li{
+    font-family:"Gloria" ;
+}
+
+.ContainerRank1{
+    font-family:"Gloria" ;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    height:100vh;
+    width: 20vw;
+    margin-left: 40%;
+    margin-top: 5%
+}
