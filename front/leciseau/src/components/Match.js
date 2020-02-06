@@ -2,7 +2,12 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import axios from "axios";
 import "./Match.css";
+import { connect } from 'react-redux'
 
+
+const mapStateToProps = (state) => {
+  return state
+} 
 class Match extends React.Component {
   state = {
     haircuts: [],
@@ -10,6 +15,12 @@ class Match extends React.Component {
     haircut2: [],
     isDisplayed: false
   };
+
+
+  storeHaircut = () => {
+    const action = {type : 'COUPE', value : this.state.haircuts}
+    this.props.dispatch(action)
+  }
 
   getHaircuts = () => {
     axios
@@ -60,15 +71,14 @@ class Match extends React.Component {
     const hairCuts = [...this.state.haircuts];
     hairCuts.splice(e.target.name, 1, winner);
     this.setState({ haircuts: hairCuts });
+    this.storeHaircut()
     this.getRandom();
   };
 
-  handleNav = () => {
-    this.props.handle(this.state.haircuts);
-    this.props.history.push("/ranking");
-  };
 
   render() {
+    console.log(this);
+    
     return (
       <>
         <div className="Container1">
@@ -97,15 +107,14 @@ class Match extends React.Component {
             </button>
           </div>
         </div>
-        <input
+       <Link to="/ranking"> <input
           className=" btn btn-dark px-5 py-4 inputmatch"
           type="button"
           value="See The best Haircut !"
-          onClick={() => this.handleNav()}
-        />
+        /></Link>
       </>
     );
   }
 }
 
-export default withRouter(Match);
+export default connect(mapStateToProps)(Match);
