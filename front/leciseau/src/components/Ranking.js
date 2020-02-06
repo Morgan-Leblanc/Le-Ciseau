@@ -8,12 +8,11 @@ const mapStateToProps = state => {
 };
 class Ranking extends React.Component {
   render() {
-    console.log("azerty ======= ",this.props.storeHaircut.haircut)
     return (
       <div className="ContainerRank1">
         <h1 className="display-2 mb-5">Ranking:</h1>
       <p>{this.props.storeHaircut.haircut.map(item => (
-        <li>{item.name} {item.rank}</li>
+        <li>{item.name} {item.rank} <img src={star}/></li>
       ))}</p>
       </div>
     );
